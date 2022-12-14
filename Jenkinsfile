@@ -9,7 +9,7 @@ pipeline {
 
       stage ('Checkout SCM'){
         steps {
-          checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git', url: 'git clone https://vijayabhaskar549@bitbucket.org/vijayabhaskar549/pipeline-project.git']]])
+          git 'https://github.com/VijayPersistent/dockeransiblejenkins.git'
         }
       }
 	  
