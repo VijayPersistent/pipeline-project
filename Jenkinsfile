@@ -9,7 +9,7 @@ pipeline {
 
       stage ('Checkout SCM'){
         steps {
-          git 'https://github.com/VijayPersistent/pipeline-project.git'
+          git branch: 'main', url: 'https://github.com/VijayPersistent/pipeline-project.git'
         }
       }
 	  
