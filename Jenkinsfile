@@ -59,25 +59,25 @@ pipeline {
             }
     }
 
-    stage ('Deploy Artifacts') {
-            steps {
-                rtMavenRun (
-                    tool: "maven-3.8.6", // Tool name from Jenkins configuration
-                    pom: 'java-source/pom.xml',
-                    goals: 'clean install',
-                    deployerId: "MAVEN_DEPLOYER",
-                    resolverId: "MAVEN_RESOLVER"
-                )
-         }
-    }
+//     stage ('Deploy Artifacts') {
+//             steps {
+//                 rtMavenRun (
+//                     tool: "maven-3.8.6", // Tool name from Jenkins configuration
+//                     pom: 'java-source/pom.xml',
+//                     goals: 'clean install',
+//                     deployerId: "MAVEN_DEPLOYER",
+//                     resolverId: "MAVEN_RESOLVER"
+//                 )
+//          }
+//     }
 
-    stage ('Publish build info') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "jfrog"
-             )
-        }
-    }
+//     stage ('Publish build info') {
+//             steps {
+//                 rtPublishBuildInfo (
+//                     serverId: "jfrog"
+//              )
+//         }
+//     }
 
     stage('Copy Dockerfile & Playbook to Ansible Server') {
             
